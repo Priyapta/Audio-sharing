@@ -2,6 +2,18 @@
 
 Aplikasi Windows berbasis C#, .NET 10, WPF, dan NAudio 3.1.0 stabil. Menangkap mix satu playback endpoint menggunakan WASAPI loopback shared mode, kemudian mengirimkannya ke output lain. Tidak memasang driver virtual dan tidak mengubah default output atau master volume Windows.
 
+## Program ini buat apa?
+
+Program ini mengambil audio yang sedang diputar pada satu output Windows pilihan, lalu meneruskannya secara bersamaan ke output headset atau speaker lain. Contohnya, putar musik ke speaker laptop sebagai sumber, lalu pilih dua headset sebagai pendengar.
+
+Program bisa:
+- Menampilkan perangkat audio Windows dan memilih perangkat sumber serta pendengar.
+- Mengirim audio sumber ke 2–5 pendengar aktif sekaligus.
+- Mengatur volume aplikasi untuk setiap pendengar secara terpisah.
+- Tetap menjalankan pendengar lain jika salah satu output terputus, serta menghentikan sesi jika sumber terputus.
+
+Program berjalan di komputer Windows pengguna; ini bukan layanan cloud atau aplikasi untuk pairing Bluetooth. Audio yang diarahkan ke output sumber yang dipilih akan ditangkap; audio dari output lain dan sebagian konten berproteksi DRM mungkin tidak tertangkap. Output sumber tidak menerima audio kiriman ulang, dan volumenya tetap diatur oleh Windows.
+
 ## Menjalankan
 
 Prasyarat: Windows 10/11, .NET 10 SDK, perangkat audio sudah terhubung dan aktif di Windows.
